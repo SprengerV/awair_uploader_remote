@@ -1,0 +1,32 @@
+{
+  "name": "awair_uploader_remote",
+  "version": "1.0.0",
+  "description": "A workaround for Awair Element datastream uploads to Planet Watch servers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "npx concurrently \"npx nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SprengerV/awair_uploader_remote.git"
+  },
+  "author": "Brendan Francis",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/SprengerV/awair_uploader_remote/issues"
+  },
+  "homepage": "https://github.com/SprengerV/awair_uploader_remote#readme",
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
